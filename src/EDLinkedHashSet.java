@@ -191,7 +191,7 @@ public class EDLinkedHashSet<T> implements Set<T> {
 
         linkLast(nuevo);
         size++;
-        if(size >= rehashThreshold){
+        if(size > rehashThreshold){
             rehash();
         }
         return true;
@@ -212,7 +212,6 @@ public class EDLinkedHashSet<T> implements Set<T> {
             aux.hnext = table[poscion];
             table[poscion] = aux;
             aux = aux.next;
-        }
         }
     }
 
